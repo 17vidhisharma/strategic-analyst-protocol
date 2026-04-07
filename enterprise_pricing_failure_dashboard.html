@@ -1,0 +1,224 @@
+
+<style>
+  .db-wrap { font-family: var(--font-sans); padding: 1rem 0; }
+  .db-header { border-bottom: 0.5px solid var(--color-border-tertiary); padding-bottom: 1rem; margin-bottom: 1.25rem; }
+  .db-title { font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 2px; }
+  .db-sub { font-size: 13px; color: var(--color-text-secondary); margin: 0; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 10px; margin-bottom: 1.25rem; }
+  .kpi { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 14px; }
+  .kpi-label { font-size: 11px; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .04em; margin: 0 0 4px; }
+  .kpi-val { font-size: 22px; font-weight: 500; margin: 0; color: var(--color-text-primary); }
+  .kpi-val.danger { color: #A32D2D; }
+  .kpi-val.success { color: #3B6D11; }
+  .kpi-badge { font-size: 11px; margin-top: 3px; }
+  .kpi-badge.red { color: #A32D2D; }
+  .kpi-badge.green { color: #3B6D11; }
+  .chart-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+  .chart-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px 16px; }
+  .chart-card.full { grid-column: 1 / -1; }
+  .chart-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin: 0 0 2px; }
+  .chart-desc { font-size: 11px; color: var(--color-text-secondary); margin: 0 0 12px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 8px; font-size: 11px; color: var(--color-text-secondary); }
+  .legend span { display: flex; align-items: center; gap: 4px; }
+  .legend-sq { width: 9px; height: 9px; border-radius: 2px; display: inline-block; flex-shrink: 0; }
+  .insight-bar { background: #FCEBEB; border-left: 3px solid #E24B4A; border-radius: 0; padding: 10px 14px; margin-bottom: 12px; }
+  .insight-bar p { margin: 0; font-size: 12px; color: #501313; line-height: 1.5; }
+</style>
+<div class="db-wrap">
+  <div class="db-header">
+    <p class="db-title">$777K hidden loss — enterprise pricing failure</p>
+    <p class="db-sub">2013–2014 · 700 transactions · 5 segments · 6 products · 6 countries</p>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi">
+      <p class="kpi-label">Total revenue</p>
+      <p class="kpi-val">$118.7M</p>
+      <p class="kpi-badge green">14.2% blended margin</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Enterprise revenue</p>
+      <p class="kpi-val">$19.6M</p>
+      <p class="kpi-badge" style="color:var(--color-text-secondary)">16.5% of total</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Enterprise profit</p>
+      <p class="kpi-val danger">−$615K</p>
+      <p class="kpi-badge red">−3.1% margin</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Value destroyed</p>
+      <p class="kpi-val danger">$3.4M</p>
+      <p class="kpi-badge red">vs. avg company margin</p>
+    </div>
+    <div class="kpi">
+      <p class="kpi-label">Unit margin at High disc.</p>
+      <p class="kpi-val danger">−$10.44</p>
+      <p class="kpi-badge red">per unit sold</p>
+    </div>
+  </div>
+
+  <div class="insight-bar">
+    <p>Enterprise COGS is hardcoded at $120/unit for all products. Amarilla (mfg $260) and VTT (mfg $250) are sold at $125 — below manufacturing cost on every transaction. Current reporting does not surface this.</p>
+  </div>
+
+  <div class="chart-card full" style="margin-bottom:12px;">
+    <p class="chart-title">Segment profit: Enterprise is the only loss-maker</p>
+    <p class="chart-desc">All five other segments generate positive profit. Enterprise alone destroys value.</p>
+    <div class="legend">
+      <span><span class="legend-sq" style="background:#639922;"></span>Profitable segment</span>
+      <span><span class="legend-sq" style="background:#E24B4A;"></span>Loss-making segment</span>
+    </div>
+    <div style="position:relative;width:100%;height:220px;">
+      <canvas id="segChart" role="img" aria-label="Bar chart showing profit by segment. Government leads at 11.4M, Small Business 4.1M, Channel Partners 1.3M, Midmarket 660K. Enterprise is the only negative at negative 615K.">Segment profits: Government $11.4M, Small Business $4.1M, Channel Partners $1.3M, Midmarket $660K, Enterprise -$615K.</canvas>
+    </div>
+  </div>
+
+  <div class="chart-row">
+    <div class="chart-card">
+      <p class="chart-title">Margin collapses as discount band rises</p>
+      <p class="chart-desc">A $5/unit gross margin offers no buffer. Any discount renders the deal unprofitable.</p>
+      <div class="legend">
+        <span><span class="legend-sq" style="background:#639922;"></span>Positive</span>
+        <span><span class="legend-sq" style="background:#E24B4A;"></span>Negative</span>
+      </div>
+      <div style="position:relative;width:100%;height:200px;">
+        <canvas id="discChart" role="img" aria-label="Bar chart showing Enterprise profit per unit by discount band. None is plus 5, Low is plus 1.93, Medium is minus 3.53, High is minus 10.44.">Profit per unit: None +$5.00, Low +$1.93, Medium -$3.53, High -$10.44.</canvas>
+      </div>
+    </div>
+    <div class="chart-card">
+      <p class="chart-title">Reported vs. true loss by product</p>
+      <p class="chart-desc">Amarilla and VTT are sold below their actual manufacturing cost. COGS masking hides the scale.</p>
+      <div class="legend">
+        <span><span class="legend-sq" style="background:#888780;"></span>Reported profit</span>
+        <span><span class="legend-sq" style="background:#E24B4A;"></span>True profit (actual mfg cost)</span>
+      </div>
+      <div style="position:relative;width:100%;height:200px;">
+        <canvas id="prodChart" role="img" aria-label="Grouped bar chart comparing reported vs true profit for Enterprise products. Amarilla reported is minus 95K but true is minus 3.3M. VTT reported is minus 99K but true is minus 2.7M. Other products look fine on reported basis.">Amarilla: reported -$95K, true -$3.3M. VTT: reported -$99K, true -$2.7M. Carretera, Montana, Paseo show positive true profit. Velo is similar reported and true.</canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-card full">
+    <p class="chart-title">Enterprise margin vs. all other segments</p>
+    <p class="chart-desc">Gross margin comparison confirms Enterprise is a structural outlier, not a temporary dip.</p>
+    <div class="legend">
+      <span><span class="legend-sq" style="background:#3B6D11;"></span>Healthy (>10%)</span>
+      <span><span class="legend-sq" style="background:#BA7517;"></span>Thin (0–10%)</span>
+      <span><span class="legend-sq" style="background:#E24B4A;"></span>Loss (<0%)</span>
+    </div>
+    <div style="position:relative;width:100%;height:180px;">
+      <canvas id="marginChart" role="img" aria-label="Horizontal bar chart of gross margin by segment. Channel Partners 73%, Midmarket 27.7%, Government 21.7%, Small Business 9.8%, Enterprise negative 3.1%.">Margins: Channel Partners 73.1%, Midmarket 27.7%, Government 21.7%, Small Business 9.8%, Enterprise -3.1%.</canvas>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const isDark = matchMedia('(prefers-color-scheme: dark)').matches;
+const textColor = isDark ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.5)';
+const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)';
+const baseOpts = {
+  responsive: true,
+  maintainAspectRatio: false,
+  plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => {
+    const v = ctx.parsed.y ?? ctx.parsed.x;
+    const abs = Math.abs(v);
+    const sign = v < 0 ? '-' : '';
+    if (abs >= 1000000) return sign + '$' + (abs/1000000).toFixed(1) + 'M';
+    if (abs >= 1000) return sign + '$' + Math.round(abs/1000) + 'K';
+    return sign + '$' + abs.toFixed(2);
+  }}}},
+  scales: {
+    x: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11 } }, border: { display: false } },
+    y: { grid: { color: gridColor }, ticks: { color: textColor, font: { size: 11 } }, border: { display: false } }
+  }
+};
+
+new Chart(document.getElementById('segChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Government','Small Business','Channel Partners','Midmarket','Enterprise'],
+    datasets: [{
+      data: [11388173, 4143168, 1316803, 660103, -614546],
+      backgroundColor: ['#639922','#639922','#639922','#639922','#E24B4A'],
+      borderRadius: 3,
+      borderSkipped: false
+    }]
+  },
+  options: { ...baseOpts, plugins: { ...baseOpts.plugins, tooltip: { callbacks: { label: ctx => {
+    const v = ctx.parsed.y;
+    const sign = v < 0 ? '-' : '';
+    const abs = Math.abs(v);
+    return sign + '$' + (abs/1000000).toFixed(2) + 'M';
+  }}}},
+  scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, ticks: { ...baseOpts.scales.y.ticks, callback: v => {
+    const s = v < 0 ? '-' : '';
+    return s + '$' + (Math.abs(v)/1000000).toFixed(1) + 'M';
+  }}}}
+  }
+});
+
+new Chart(document.getElementById('discChart'), {
+  type: 'bar',
+  data: {
+    labels: ['None\n(0%)','Low\n(2.5%)','Medium\n(6.8%)','High\n(12.4%)'],
+    datasets: [{
+      data: [5.00, 1.93, -3.53, -10.44],
+      backgroundColor: ['#639922','#97C459','#E24B4A','#A32D2D'],
+      borderRadius: 3,
+      borderSkipped: false
+    }]
+  },
+  options: { ...baseOpts, plugins: { ...baseOpts.plugins, tooltip: { callbacks: { label: ctx => {
+    const v = ctx.parsed.y;
+    return (v < 0 ? '-' : '+') + '$' + Math.abs(v).toFixed(2) + '/unit';
+  }}}},
+  scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, ticks: { ...baseOpts.scales.y.ticks, callback: v => (v>=0?'+':'') + '$' + v.toFixed(2) }}}
+  }
+});
+
+new Chart(document.getElementById('prodChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Amarilla','Carretera','Montana','Paseo','VTT','Velo'],
+    datasets: [
+      { label: 'Reported', data: [-95152, -222712, -31096, -81740, -99082, -84762], backgroundColor: '#B4B2A9', borderRadius: 2, borderSkipped: false },
+      { label: 'True', data: [-3290372, 3118048, 2504596, 4822060, -2698562, -84762], backgroundColor: ctx => ctx.parsed.y < 0 ? '#E24B4A' : '#639922', borderRadius: 2, borderSkipped: false }
+    ]
+  },
+  options: { ...baseOpts,
+    plugins: { ...baseOpts.plugins, tooltip: { callbacks: { label: ctx => {
+      const v = ctx.parsed.y;
+      const s = v < 0 ? '-' : '';
+      const a = Math.abs(v);
+      return ctx.dataset.label + ': ' + s + '$' + (a>=1000000?(a/1000000).toFixed(2)+'M':Math.round(a/1000)+'K');
+    }}}},
+    scales: { ...baseOpts.scales, y: { ...baseOpts.scales.y, ticks: { ...baseOpts.scales.y.ticks, callback: v => {
+      const s = v < 0 ? '-' : '';
+      const a = Math.abs(v);
+      return s + '$' + (a>=1000000?(a/1000000).toFixed(1)+'M':Math.round(a/1000)+'K');
+    }}}}
+  }
+});
+
+new Chart(document.getElementById('marginChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Channel Partners','Midmarket','Government','Small Business','Enterprise'],
+    datasets: [{
+      data: [73.1, 27.7, 21.7, 9.8, -3.1],
+      backgroundColor: ['#639922','#639922','#639922','#BA7517','#E24B4A'],
+      borderRadius: 3,
+      borderSkipped: false
+    }]
+  },
+  options: { ...baseOpts, indexAxis: 'y',
+    plugins: { ...baseOpts.plugins, tooltip: { callbacks: { label: ctx => (ctx.parsed.x >= 0 ? '' : '') + ctx.parsed.x.toFixed(1) + '%' }}},
+    scales: {
+      x: { ...baseOpts.scales.x, ticks: { ...baseOpts.scales.x.ticks, callback: v => v + '%' }, min: -10, max: 80 },
+      y: { ...baseOpts.scales.y, ticks: { color: textColor, font: { size: 11 } } }
+    }
+  }
+});
+</script>
