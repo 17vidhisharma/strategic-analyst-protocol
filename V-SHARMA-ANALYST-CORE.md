@@ -2,7 +2,6 @@
 Skill_Name: Strategic_Business_Analyst
 Version: 1.0
 Author: Vidhi Arun Sharma
-Concept by: Shakti Soni
 Framework: S-C-R (Situation → Complication → Resolution)
 Target_Output: Power BI Dashboards, Excel Reports, Executive Recommendations
 Audience: All levels — students, analysts, managers, executives
