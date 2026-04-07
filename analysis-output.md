@@ -1,4 +1,4 @@
-Now I have everything I need. Let me build the complete analysis and dashboard.
+
 
 $777K Hidden Loss: Detecting a Pricing Logic Failure in Enterprise Sales
 Enterprise is the only segment actively destroying shareholder value — posting a $614K operating loss on $19.6M in revenue while every other segment generates profit. The loss is not cyclical or market-driven; it is structural, embedded in a fixed pricing architecture that was never designed to scale across products with wildly different manufacturing costs. Standard P&L reporting obscures the true depth of the problem because COGS is calculated at a flat $120/unit for all Enterprise transactions, masking the reality that two products — Amarilla and VTT — are being sold at prices that do not even cover their manufacturing cost.
@@ -138,4 +138,3 @@ Recommendation 4: The Controller should correct the COGS calculation methodology
 Trade-off: The restatement will reveal that Enterprise's true economic loss is far larger than the reported −$615K. Prepare leadership for this conversation before the numbers are published internally.
 Risk of inaction: At the 2014 revenue run rate, Enterprise is on track to post $1.2M–$1.5M in cumulative losses over the next 12 months, subsidized entirely by Government and Small Business profits. The COGS reporting error means this will continue to be underreported. If Amarilla and VTT volume grows — which it likely will under the current pricing model since sales reps are incentivized on revenue, not margin — the true economic loss accelerates. Within 2–3 quarters, Enterprise losses could meaningfully erode the company's overall 14.2% margin.
 
-Output Checklist: ✅ Stakeholder Brief · ✅ Data Dictionary · ✅ Data Audit · ✅ Cleaning Log · ✅ Real-world cross-check · ✅ Setup (CXO-framed) · ✅ S→C→R narrative · ✅ Engineered variables · ✅ DAX measures · ✅ Dashboard · ✅ Recommendations with 7-day actions and risk of inaction
