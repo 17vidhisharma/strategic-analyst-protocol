@@ -166,20 +166,14 @@ This can lead to:
 - long-term margin erosion  
 
 ---
-
+[View Full Analysis Output](./analysis-output.md)
+---
 ## Tools Used
 
 - Power BI  
 - Excel / CSV  
 - Structured analytical framework  
 
----
-
-## Repository Structure
-├── analyst-skill-SKILL.md
-├── financials_enterprise_glitch_dashboard.html
-├── Financials.csv
-└── README.md
 
 
 ---
