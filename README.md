@@ -131,7 +131,7 @@ The dashboard is designed for **fast executive understanding**.
   - Revenue share by segment
   - COGS vs Sales comparison
 
-View: `financials_enterprise_glitch_dashboard.html`
+View: `enterprise_pricing_failure_dashboard.html`
 
 ---
 
