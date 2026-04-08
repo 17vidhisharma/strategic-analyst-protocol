@@ -111,6 +111,9 @@ Loss-making rows were flagged instead of removed.
 
 The dashboard is designed for **fast executive understanding**.
 
+<img width="1440" height="2474" alt="image" src="https://github.com/user-attachments/assets/a0ced3b7-d428-4563-a68a-2053fbe50da0" />
+
+
 ### Layout
 
 - KPI row:
