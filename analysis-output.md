@@ -1,4 +1,5 @@
 
+<img width="1440" height="2460" alt="image" src="https://github.com/user-attachments/assets/46f6490b-d21d-4170-8ca9-26c0bfcc9b07" />
 
 $777K Hidden Loss: Detecting a Pricing Logic Failure in Enterprise Sales
 Enterprise is the only segment actively destroying shareholder value — posting a $614K operating loss on $19.6M in revenue while every other segment generates profit. The loss is not cyclical or market-driven; it is structural, embedded in a fixed pricing architecture that was never designed to scale across products with wildly different manufacturing costs. Standard P&L reporting obscures the true depth of the problem because COGS is calculated at a flat $120/unit for all Enterprise transactions, masking the reality that two products — Amarilla and VTT — are being sold at prices that do not even cover their manufacturing cost.
